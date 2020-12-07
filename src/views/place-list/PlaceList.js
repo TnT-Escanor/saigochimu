@@ -7,6 +7,9 @@ import "./PlaceList.css";
 import { Layout, Carousel, Row, Col, Radio, Space } from 'antd';
 import orderBy from "lodash/orderBy";
 import axios from "axios";
+import SearchBar from '../../components/searchBar/searchBar';
+
+import UserService from "../../services/user.service";
 
 
 const exampleTagList = ["All","React","Blockchain","PHP","BrSE","AI"]
@@ -194,16 +197,18 @@ class PlaceList extends React.Component {
 
                     </>
                 }
-
-                <Content style={{ padding: '0 200px', marginTop: 0, minHeight: '90vh' }}>
-                    <div className="site-layout-content">
-                        {/* <div className="search-bar" style={{width:"60%", margin: "auto", marginBottom: "2em" }}>
+                <br/>
+                <br/>
+                <br/>
+                <Content style={{ width: "90%", padding: '0 200px', margin: "auto", minHeight: '90vh' }}>
+                    {/* <div className="site-layout-content"> */}
+                        <div className="search-bar" style={{width:"60%", margin: "auto", marginBottom: "2em" }}>
                             <SearchBar 
                                 value={this.state.query}
                                 handleSearch={this.handleSearch}
                             >
                             </SearchBar>
-                        </div> */}
+                        </div>
                         
                         <div style={{width:"60%", margin: "auto", marginBottom: "2em" }}>
                             <Space style={{ margin: "auto" }}>
@@ -236,7 +241,7 @@ class PlaceList extends React.Component {
                                 {this.renderPostList(this.state.filterTagList, data)}
                             </>
                         </Row>  
-                    </div>
+                    {/* </div> */}
 
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Group6 ©2020 ITSS</Footer>
